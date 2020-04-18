@@ -30,12 +30,8 @@ public class MyList implements MinimalIntList {
         length++;
     }
     /*
-        - counter variable for list array
-        - increase the array size by one
-        - if were at the index to be inserted
-        - use the value variable
-        - otherwise copy an index from the array
-        - increment the counter variable
+    implement this
+    https://gist.github.com/harrisj09/f5e51b56b5a7bf259e688ded04a261d1
      */
 
     @Override
