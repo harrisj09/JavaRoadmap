@@ -16,20 +16,20 @@ public class Sorting06QuickSort implements Sorting00Sorter {
 
     @Override
     public MinimalIntList sort(MinimalIntList list) {
-        partition(list, 0, list.length());
         quicksort(list, 0, list.length());
         return list;
     }
 
     private MinimalIntList quicksort(MinimalIntList list, int low, int high) {
-        if(low < high) {
-            partition(list, low, (list.length() / 2) - 1);
-            partition(list, (list.length() / 2) + 1, high);
+        if(high - low > 1) {
+            int pivot = partition(list, low, high);
+            quicksort(list, low, pivot);
+            quicksort(list, pivot + 1, high);
         }
         return list;
     }
 
-    private MinimalIntList partition(MinimalIntList list, int low, int high) {
+    private int partition(MinimalIntList list, int low, int high) {
         int pivotValue = list.get(low);
         int pivotIndex = low;
         for (int i = low + 1; i < high; i++) {
@@ -39,7 +39,7 @@ public class Sorting06QuickSort implements Sorting00Sorter {
             }
         }
         swap(list, low, pivotIndex);
-        return list;
+        return pivotIndex;
     }
 
     private MinimalIntList swap(MinimalIntList list, int pivotIndex, int swapIndex) {
