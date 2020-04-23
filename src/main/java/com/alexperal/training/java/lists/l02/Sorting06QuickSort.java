@@ -21,8 +21,12 @@ public class Sorting06QuickSort implements Sorting00Sorter {
     }
 
     private MinimalIntList quicksort(MinimalIntList list, int low, int high) {
+        // We recursively call this method until high - low is less than 2
         if(high - low > 1) {
+            // partition is what swaps the list.
+            // It still swaps it even though were returning an int since we passed in a memory address.
             int pivot = partition(list, low, high);
+            // Since we start at the first index we go into the next index incrementally until we get to the last index
             quicksort(list, low, pivot);
             quicksort(list, pivot + 1, high);
         }

@@ -29,6 +29,7 @@ public class MyList implements MinimalIntList {
         list[length] = value;
         length++;
     }
+
     /*
     implement this
     https://gist.github.com/harrisj09/f5e51b56b5a7bf259e688ded04a261d1
